@@ -1,0 +1,20 @@
+# The main entry point of your workflow.
+# After configuring, running snakemake -n in a clone of this repository should successfully execute a dry-run of the workflow.
+
+# Find sample directory names
+DIRS = glob_wildcards("../data/long-read/{dir}").dir
+
+# Load helper functions
+include: "rules/common.smk"
+
+# Load rules
+include: "rules/filtlong.smk"
+include: "rules/flye.smk"
+include: "rules/cat_assembly_info.smk"
+
+# Target rule
+rule all:
+    input:
+        long_read_dirs = expand("results/{dir}", dir = DIRS),
+        assembly_info  = "results/assembly_info_cat.txt"
+
