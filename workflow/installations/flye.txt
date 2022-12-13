@@ -1,0 +1,2 @@
+conda create -n flye -c bioconda -c conda-forge flye -y
+conda env export -n flye > ../envs/flye.yml

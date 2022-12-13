@@ -1,0 +1,2 @@
+conda create -n filtlong -c bioconda -c conda-forge filtlong -y
+conda env export -n filtlong > ../envs/filtlong.yml

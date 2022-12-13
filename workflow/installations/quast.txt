@@ -1,0 +1,2 @@
+mamba create -n quast -c bioconda -c conda-forge quast -y
+mamba env export -n quast > ../envs/quast.yml

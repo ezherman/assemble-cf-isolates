@@ -1,0 +1,3 @@
+# needed to use mamba on local machine, solving step took too long
+conda create -n medaka -c conda-forge -c bioconda medaka -y 
+conda env export -n medaka ../envs/medaka.yml

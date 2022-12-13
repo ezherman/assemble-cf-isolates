@@ -1,0 +1,15 @@
+# default installation suggested on the homopolish github did not work
+# due to issues with the version/channel of libedit
+# installing libedit and homopolish in separate steps worked
+# note that installing this environment from the yml file
+# also requires the 
+
+
+mamba create -n homopolish -c anaconda --override-channels libedit -y
+mamba activate homopolish
+mamba install -c conda-forge -c bioconda homopolish -y
+mamba env export > ../envs/homopolish.yml
+
+# this works, however it requires channel priority to be set to flexible before running mamba env create
+mamba create -n homopolish -c conda-forge -c bioconda -c anaconda homopolish=0.4.1 "anaconda::libedit >=3.1.20210910" --no-channel-priority -y
+mamba env export -n homopolish > ../envs/homopolish.yml
