@@ -10,7 +10,9 @@ rule homopolish:
         outdir = "results/intermediate/{barcode}/homopolish_assembly",
         genus  = "pseudomonas_aeruginosa",
         model  = "R9.4.pkl"
-    conda: "../envs/homopolish.yml"
+    conda: "homopolish" #this refers to a conda environment that already exists
+                        #because this conda environment cannot be produced from a yaml
+                        #with strict channel priority
     threads: 4 #set to max threads now to prevent multiple NCBI downloads at the same time, can improve with a resources section for cluster
     shell:
         r"""

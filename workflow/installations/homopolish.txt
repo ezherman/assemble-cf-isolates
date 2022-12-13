@@ -1,15 +1,18 @@
 # default installation suggested on the homopolish github did not work
 # due to issues with the version/channel of libedit
-# installing libedit and homopolish in separate steps worked
-# note that installing this environment from the yml file
-# also requires the 
-
-
-mamba create -n homopolish -c anaconda --override-channels libedit -y
-mamba activate homopolish
-mamba install -c conda-forge -c bioconda homopolish -y
-mamba env export > ../envs/homopolish.yml
+# flexible channel priority is required, but requires different export command
+# to work with strict channel priority in snakemake
 
 # this works, however it requires channel priority to be set to flexible before running mamba env create
-mamba create -n homopolish -c conda-forge -c bioconda -c anaconda homopolish=0.4.1 "anaconda::libedit >=3.1.20210910" --no-channel-priority -y
-mamba env export -n homopolish > ../envs/homopolish.yml
+conda config --set channel_priority flexible
+mamba create -n homopolish -c conda-forge -c bioconda -c anaconda homopolish -y
+conda config --set channel_priority strict
+conda activate homopolish
+conda env export > ../envs/homopolish.yml
+
+# rather than specifying homopolish.yml in the conda section of the homopolish rule,
+# the actual homopolish environment is given
+# this requires the user to run the following before running the workflow for the first time:
+conda config --set channel_priority flexible
+conda env create -f ../envs/homopolish.yml
+conda config --set channel_priority strict
