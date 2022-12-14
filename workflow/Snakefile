@@ -12,6 +12,7 @@ include: "rules/common.smk"
 include: "rules/filtlong.smk"
 include: "rules/flye.smk"
 include: "rules/medaka.smk"
+include: "rules/download_homopolish_sketch.smk"
 include: "rules/homopolish.smk"
 include: "rules/quast.smk"
 
