@@ -18,8 +18,8 @@ rule polypolish:
 
             bwa index ../{input.medaka}
 
-            bwa mem -t {threads} -a ../{input.medaka} > alignments_1.sam
-            bwa mem -t {threads} -a ../{input.medaka} > alignments_2.sam
+            bwa mem -t {threads} -a ../{input.medaka} ../{input.short_fq1} > alignments_1.sam
+            bwa mem -t {threads} -a ../{input.medaka} ../{input.short_fq1} > alignments_2.sam
 
             polypolish_insert_filter.py --in1 alignments_1.sam --in2 alignments_2.sam \
             --out1 filtered_1.sam --out2 filtered_2.sam
