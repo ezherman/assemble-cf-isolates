@@ -13,6 +13,7 @@ rule polypolish:
     threads: 4
     shell:
         r"""
+            mkdir {output.working_dir} 
             cd {output.working_dir}
 
             bwa index {input.medaka}
