@@ -7,7 +7,7 @@ rule quast:
         flye        = "results/intermediate/{barcode}/flye_assembly/{barcode}_assembly_flye.fasta",
         medaka      = "results/intermediate/{barcode}/medaka_assembly/{barcode}_assembly_flye_medaka.fasta",
         homopolish  = "results/intermediate/{barcode}/homopolish_assembly/{barcode}_assembly_flye_medaka_homopolish.fasta",
-        polypolish  = "results/intermediate/{barcode}/polypolish_assembly/{barcode}_assembly_flye_medaka_polypolish.fasta"
+        polypolish  = "results/intermediate/{barcode}/polypolish_assembly/{barcode}_assembly_flye_medaka_polypolish.fasta",
         ref         = "data/reference/GCF_000006765.1_ASM676v1_genomic.fna", #PAO1 reference genome
         annotation  = "data/reference/GCF_000006765.1_ASM676v1_genomic.gff" #PAO1 reference genome annotation
     conda: "../envs/quast.yml"
