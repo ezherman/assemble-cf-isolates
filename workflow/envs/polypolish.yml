@@ -6,6 +6,7 @@ channels:
 dependencies:
   - _libgcc_mutex=0.1=conda_forge
   - _openmp_mutex=4.5=2_gnu
+  - bwa=0.7.17=h7132678_9
   - bzip2=1.0.8=h7f98852_4
   - ca-certificates=2022.12.7=ha878542_0
   - ld_impl_linux-64=2.39=hcc3a1bd_1
@@ -19,6 +20,7 @@ dependencies:
   - libzlib=1.2.13=h166bdaf_4
   - ncurses=6.3=h27087fc_1
   - openssl=3.0.7=h0b41bf4_1
+  - perl=5.32.1=2_h7f98852_perl5
   - pip=22.3.1=pyhd8ed1ab_0
   - polypolish=0.5.0=h87f3376_2
   - python=3.11.0=ha86cf86_0_cpython
@@ -28,4 +30,5 @@ dependencies:
   - tzdata=2022g=h191b570_0
   - wheel=0.38.4=pyhd8ed1ab_0
   - xz=5.2.6=h166bdaf_0
+  - zlib=1.2.13=h166bdaf_4
 prefix: /home/elh605/miniconda3/envs/polypolish
