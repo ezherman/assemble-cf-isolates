@@ -1,0 +1,3 @@
+mamba create -n polypolish -c conda-forge -c bioconda polypolish -y
+mamba activate polypolish 
+mamba env export > ../envs/polypolish.yml
