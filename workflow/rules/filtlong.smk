@@ -6,7 +6,7 @@ rule filtlong:
         raw_cat_fq  = "results/intermediate/cat_fastq_files/{barcode}_cat.fq.gz",
         filtered_fq = "results/intermediate/{barcode}/filtlong/{barcode}_filtered.fq.gz",
     input:
-        raw_fq      = "data/long-read-seq-sup/{barcode}"
+        raw_fq      = "data/long-read-seq-sup/{barcode}" # this is a directory
     conda: "../envs/filtlong.yml"
     shell:
         r"""
