@@ -4,7 +4,7 @@
 rule polypolish:
     output:
         working_dir    = temp(directory("{barcode}_polypolish_working_dir")),
-        polypolished   = "results/intermediate/{barcode}/polypolish_assembly/{barcode}_assembly_flye_medaka_polypolish.fna"
+        polypolished   = "results/main/{barcode}/polypolish_assembly/{barcode}_assembly_flye_medaka_polypolish.fna"
     input:
         medaka          = "results/intermediate/{barcode}/medaka_assembly/{barcode}_assembly_flye_medaka.fna",
         short_fq1       = "data/short-read/{barcode}_1.fastq.gz",

@@ -20,3 +20,7 @@ rule homopolish_workflow:
     input:
         #quast_reports  = expand("results/main/quast_reports/html_reports/{bc}_quast.html", bc = BARCODES),
         homopolish = expand("results/main/{bc}/homopolish_assembly/{bc}_assembly_flye_medaka_homopolish.fna", bc = BARCODES)
+
+rule polypolish_workflow:
+    input:
+        polypolish = expand("results/main/{bc}/polypolish_assembly/{bc}_assembly_flye_medaka_polypolish.fna", bc = BARCODES)
