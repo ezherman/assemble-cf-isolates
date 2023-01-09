@@ -1,14 +1,23 @@
 # assemble-cf-isolates
-Snakemake pipeline to assemble Oxfird Nanopore Technology reads. This pipeline was originally applied to P. aeruginosa isolates, however the pipeline will also work for other isolates. You will need Guppy demultiplexed and basecalled FASTQ files to begin. 
+Snakemake pipeline to assemble Oxford Nanopore Technology reads. 
+This pipeline was originally applied to P. aeruginosa isolates, 
+however the pipeline will also work for other isolates. 
+You will need Guppy demultiplexed and basecalled FASTQ files to begin. 
 
-By default, this workflow returns Homopolished assemblies. Isolates with long and short read data can also be assembled into polypolished assemblies. 
+By default, this workflow returns [Homopolished](https://github.com/ythuang0522/homopolish) assemblies. 
+Isolates with long and short read data can also be assembled into 
+[Polypolished](https://github.com/rrwick/Polypolish) assemblies. 
 
-Prior to polishing with Homopolish or Popylpolish, this workflow:
-- Filters reads using Filtlong;
-- Assembles filtered reads using Flye;
-- Polishes the Flye assembly using Medaka. 
+Prior to polishing with Homopolish or Polypolish, this workflow:
+- Filters reads using [Filtlong](https://github.com/rrwick/Filtlong);
+- Assembles filtered reads using [Flye](https://github.com/fenderglass/Flye);
+- Polishes the Flye assembly using [Medaka](https://github.com/nanoporetech/medaka). 
 
-If desired, the assemblies can be compared to a reference genome using QUAST. 
+If using Polypolish, 
+short reads are filtered using [Fastp](https://github.com/OpenGene/fastp). 
+
+If desired, the assemblies can be compared to a reference genome using 
+[QUAST](https://quast.sourceforge.net/). 
 
 ## Setup
 
@@ -95,7 +104,7 @@ By default, this is set to `R9.4.pkl`. If your sequencing involved an
 
 ### Setting up your input data
 Each isolate should have its own directory inside `data/long-read`, named
-to identify that isolate (e.g. `barcode01`). This
+to identify that isolate (e.g. `barcode02`). This
 directory should contain the *gzipped* FASTQ file(s) for that isolate.
 If you also have short-read data for this isolate, the files can be
 stored in `data/short-read`. For example, if five long-read FASTQ files
