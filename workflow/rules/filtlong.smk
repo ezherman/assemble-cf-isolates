@@ -6,10 +6,11 @@ rule filtlong:
         raw_cat_fq  = "results/intermediate/cat_fastq_files/{barcode}_cat.fq.gz",
         filtered_fq = "results/intermediate/{barcode}/filtlong/{barcode}_filtered.fq.gz",
     input:
-        raw_fq      = "data/long-read-seq-sup/{barcode}" # this is a directory
+        raw_fq      = "data/long-read/{barcode}" # this is a directory
     conda: "../envs/filtlong.yml"
     shell:
         r"""
+            # merge the FASTQ files
             cat {input.raw_fq}/*.fastq.gz > {output.raw_cat_fq}
             
             filtlong --min_length 1000 --keep_percent 95 {output.raw_cat_fq} | \

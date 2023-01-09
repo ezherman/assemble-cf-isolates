@@ -2,7 +2,7 @@
 
 rule download_homopolish_sketch:
     output:
-        sketch      = "data/homopolish/bacteria.msh"
+        sketch      = "resources/homopolish/bacteria.msh"
     params:
         filename    = "bacteria.msh"
     shell:

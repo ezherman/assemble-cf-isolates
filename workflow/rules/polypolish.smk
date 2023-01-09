@@ -4,13 +4,13 @@
 rule polypolish:
     output:
         working_dir    = temp(directory("{barcode}_polypolish_working_dir")),
-        polypolished   = "results/intermediate/{barcode}/polypolish_assembly/{barcode}_assembly_flye_medaka_polypolish.fasta"
+        polypolished   = "results/intermediate/{barcode}/polypolish_assembly/{barcode}_assembly_flye_medaka_polypolish.fna"
     input:
-        medaka          = "results/intermediate/{barcode}/medaka_assembly/{barcode}_assembly_flye_medaka.fasta",
+        medaka          = "results/intermediate/{barcode}/medaka_assembly/{barcode}_assembly_flye_medaka.fna",
         short_fq1       = "data/short-read/{barcode}_1.fastq.gz",
         short_fq2       = "data/short-read/{barcode}_2.fastq.gz"
     conda: "../envs/polypolish.yml"
-    threads: 4
+    threads: 8
     shell:
         r"""
             mkdir {output.working_dir} 

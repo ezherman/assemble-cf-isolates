@@ -1,12 +1,10 @@
-# The main entry point of your workflow.
 # After configuring, running snakemake -n in a clone of this repository should successfully execute a dry-run of the workflow.
 
-# Find sample directory names
-BARCODES = [name for name in os.listdir("data/long-read-seq-sup")]
-print(BARCODES)
+configfile: "config/config.yaml"
 
-# Load helper functions
-include: "rules/common.smk"
+# Find sample directory names
+BARCODES = [name for name in os.listdir("data/long-read")]
+print("You have provided long-read data with the following IDs:", BARCODES)
 
 # Load rules
 include: "rules/filtlong.smk"
@@ -17,8 +15,8 @@ include: "rules/homopolish.smk"
 include: "rules/polypolish.smk"
 include: "rules/quast.smk"
 
-# Target rule
-rule all:
+# Target rules
+rule homopolish_workflow:
     input:
-        quast_reports  = expand("results/main/quast_reports/html_reports/{bc}_quast.html", bc = BARCODES),
-        #homopolish = expand("results/intermediate/{bc}/homopolish_assembly/{bc}_assembly_flye_medaka_homopolish.fasta", bc = BARCODES)
+        #quast_reports  = expand("results/main/quast_reports/html_reports/{bc}_quast.html", bc = BARCODES),
+        homopolish = expand("results/main/{bc}/homopolish_assembly/{bc}_assembly_flye_medaka_homopolish.fna", bc = BARCODES)
