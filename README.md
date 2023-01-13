@@ -165,7 +165,7 @@ snakemake -j1 --use-conda homopolish_workflow polypolish_workflow
 
 ## Running the workflow on a SLURM cluster
 This workflow can be run on a SLURM cluster using the scheduler
-and profile in the `slurm` directory.
+and profile in the `slurm` directory. 
 
 ### Setup for running the workflow on a SLURM cluster
 The following features need to be specified in the scheduler
@@ -188,8 +188,9 @@ to the quoted section of the `cluster` line:
 `--mail-type=FAIL --mail-user youremail@email.com`. 
 
 ### SLURM cluster execution
-After navigating to the `slurm` directory, run the following
-to execute the homopolish workflow:
+After navigating to the `slurm` directory and activating the
+`snakemake` conda environment (`conda activate snakemake`), 
+run the following to execute the homopolish workflow:
 
 ```
 sbatch scheduler_homopolish.sh
