@@ -13,12 +13,10 @@ include: "rules/medaka.smk"
 include: "rules/download_homopolish_sketch.smk"
 include: "rules/homopolish.smk"
 include: "rules/polypolish.smk"
-include: "rules/quast.smk"
 
 # Target rules
 rule homopolish_workflow:
     input:
-        #quast_reports  = expand("results/main/quast_reports/html_reports/{bc}_quast.html", bc = BARCODES),
         homopolish = expand("results/main/{bc}/homopolish_assembly/{bc}_assembly_flye_medaka_homopolish.fna", bc = BARCODES)
 
 rule polypolish_workflow:

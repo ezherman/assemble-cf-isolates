@@ -14,10 +14,7 @@ Prior to polishing with Homopolish or Polypolish, this workflow:
 - Polishes the Flye assembly using [Medaka](https://github.com/nanoporetech/medaka). 
 
 If using Polypolish, 
-short reads are filtered using [Fastp](https://github.com/OpenGene/fastp). 
-
-If desired, the assemblies can be compared to a reference genome using 
-[QUAST](https://quast.sourceforge.net/). 
+short reads are filtered using [Fastp](https://github.com/OpenGene/fastp).  
 
 ## Setup
 
