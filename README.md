@@ -1,4 +1,4 @@
-# assemble-cf-isolates
+# Assembly pipeline for Oxford Nanopore Technology reads
 Snakemake pipeline to assemble Oxford Nanopore Technology reads. 
 This pipeline was originally applied to P. aeruginosa isolates, 
 however the pipeline will also work for other isolates. 
