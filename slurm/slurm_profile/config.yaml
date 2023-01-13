@@ -1,5 +1,5 @@
 jobs: 490
-cluster: "sbatch -t {resources.time_min} -c {threads} --mem-per-cpu={resources.mem_mb} -o 'slurm/logs_slurm/{rule}.{wildcards}.out' -e 'logs_slurm/{rule}.{wildcards}.out'"
+cluster: "sbatch -t {resources.time_min} -c {threads} --mem-per-cpu={resources.mem_mb} -o 'slurm/logs_slurm/{rule}.{wildcards}.out' -e 'slurm/logs_slurm/{rule}.{wildcards}.out'"
 default-resources: [mem_mb=2000, time_min=30]
 use-conda: true
 printshellcmds: true
