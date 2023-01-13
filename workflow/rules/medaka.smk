@@ -9,6 +9,7 @@ rule medaka:
     params: 
         outdir = "results/intermediate/{barcode}/medaka_assembly",
         model  = config.get("medaka_model", "r941_min_sup_g507") 
+    resources: mem_mb=4000
     conda: "../envs/medaka.yml"
     threads: 2
     shell:

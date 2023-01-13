@@ -12,7 +12,8 @@ rule homopolish:
         model  = config.get("homopolish_model", "R9.4.pkl"),
         prefix = "input"
     conda: "homopolish" #specifies the homopolish env, rather than a yml file
-    threads: 8 
+    threads: 8
+    resources: mem_mb=4000 
     shell:
         r"""
             # homopolish outputs yourgenome_homopolished.fasta, where yourgenome is the name of the input file
