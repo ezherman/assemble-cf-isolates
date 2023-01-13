@@ -145,6 +145,8 @@ You can also explicitly specify that you want Homopolished assemblies:
 snakemake -j1 --use-conda homopolish_workflow
 ```
 
+Note that homopolish seems to require 16GB of RAM. 
+
 ### Polypolished assemblies
 If you have short-read data for some or all of your isolates,
 you can request polypolished assemblies as follows:
