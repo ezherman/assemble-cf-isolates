@@ -7,8 +7,8 @@ rule polypolish:
         polypolished   = "results/main/{barcode}/polypolish_assembly/{barcode}_assembly_flye_medaka_polypolish.fna"
     input:
         medaka          = "results/intermediate/{barcode}/medaka_assembly/{barcode}_assembly_flye_medaka.fna",
-        short_fq1       = "data/short-read/{barcode}_1.fastq.gz",
-        short_fq2       = "data/short-read/{barcode}_2.fastq.gz"
+        short_fq1       = "results/intermediate/{barcode}/fastp/{barcode}_filt_1.fq.gz",
+        short_fq2       = "results/intermediate/{barcode}/fastp/{barcode}_filt_2.fq.gz"
     conda: "../envs/polypolish.yml"
     threads: 8
     shell:

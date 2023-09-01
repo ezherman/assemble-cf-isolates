@@ -1,0 +1,4 @@
+mamba create -n fastp -c conda-forge -c bioconda fastp -y
+
+conda activate fastp
+conda env export > workflow/envs/fastp.yaml
